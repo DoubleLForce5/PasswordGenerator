@@ -10,7 +10,7 @@ var criteria = {
   specialCharacters: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
 }
 
-var choices;
+// var choices;
 var confirmNumber;
 var confirmSpecialCharacter;
 var confirmUppercase;
@@ -29,10 +29,17 @@ function generatePassword(){
   confirmUppercase = confirm ('Would you like uppercase letters in your password?');
   confirmLowercase = confirm('Would you like lowercase letters in your password?');
   };
-  // if, else statement 
-  if (!confirmNumber || !confirmSpecialCharacter || !confirmUppercase || !confirmLowercase) {
+  // if even one confirmation is not confirmed the alert will be returned to the user 
+  if (confirmNumber || confirmSpecialCharacter || confirmUppercase || confirmLowercase) {
     alert ('Invalid please try again');
-  } 
+  } else if (confirmNumber === numbers) { 
+    // How values are chosen 
+    for (i = 1; i <= passwordLength; i++) {
+    index = Math.floor(Math.random() * criteria.numbers.length);
+    character = criteria.numbers[index]
+    console.log(character);
+    }
+  }
 }
 
 // Write password to the #password input
