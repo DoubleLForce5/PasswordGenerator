@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// various characters that will be used to create password | Computer needs to calculate its input choice 
+// various characters that will be used to create password | Computer needs to calculate its input choice | criteria = object, lowercase/uppercase/numbers/specialcharacters = names and their contents = values 
 
 var criteria = {
   lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
@@ -30,16 +30,38 @@ function generatePassword(){
   confirmLowercase = confirm('Would you like lowercase letters in your password?');
   };
   // if even one confirmation is not confirmed the alert will be returned to the user 
-  if (confirmNumber || confirmSpecialCharacter || confirmUppercase || confirmLowercase) {
+  if (!confirmNumber || !confirmSpecialCharacter || !confirmUppercase || !confirmLowercase) {
     alert ('Invalid please try again');
-  } else if (confirmNumber === numbers) { 
+    // numbers --------------
+  } else if (confirmNumber === criteria.numbers) { 
     // How values are chosen 
     for (i = 1; i <= passwordLength; i++) {
     index = Math.floor(Math.random() * criteria.numbers.length);
-    character = criteria.numbers[index]
+    character = criteria.numbers[index];
     console.log(character);
     }
-  }
+    // special characters ------------------
+  } else if (confirmSpecialCharacter === criteria.specialCharacters) {  
+    for (i = 1; i <= passwordLength; i++) {
+    index = Math.floor(Math.random() * criteria.specialCharacters.length);
+    character = criteria.specialCharacters[index];
+    console.log(character);
+    }
+    // uppercase ---------------------------------------
+  } else if (confirmUppercase === criteria.confirmUppercase) {  
+    for (i = 1; i <= passwordLength; i++) {
+    index = Math.floor(Math.random() * criteria.confirmUppercase.length);
+    character = criteria.confirmUppercase[index];
+    console.log(character);
+    }
+    // lowercase -------------------------------
+  } else if (confirmLowercase === criteria.confirmLowercase) {  
+    for (i = 1; i <= passwordLength; i++) {
+    index = Math.floor(Math.random() * criteria.confirmLowercase.length);
+    character = criteria.confirmLowercase[index];
+    console.log(character);
+    }
+  } return password; 
 }
 
 // Write password to the #password input
