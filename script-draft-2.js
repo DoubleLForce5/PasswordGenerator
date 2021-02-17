@@ -10,13 +10,12 @@ var criteria = {
   specialCharacters: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
 }
 
-// var choices;
 var confirmNumber;
 var confirmSpecialCharacter;
 var confirmUppercase;
 var confirmLowercase;
 
-function generatePassword(){
+function generatePassword() {
   // do stuff to generate a password
   passwordLength = prompt ('How many characters would you like in your password? Please enter a number between 8 and 128!');
   // If, else statement 
@@ -32,8 +31,10 @@ function generatePassword(){
   // if even one confirmation is not confirmed the alert will be returned to the user 
   if (!confirmNumber || !confirmSpecialCharacter || !confirmUppercase || !confirmLowercase) {
     alert ('Invalid please try again');
+    console.log(alert);
     // numbers --------------
-  } else if (confirmNumber === criteria.numbers) { 
+    // confirmNumber will never === criteria.numbers because they are different data types 
+  } else if ('criteria.numbers') { 
     // How values are chosen 
     for (i = 1; i <= passwordLength; i++) {
     index = Math.floor(Math.random() * criteria.numbers.length);
@@ -41,26 +42,27 @@ function generatePassword(){
     console.log(character);
     }
     // special characters ------------------
-  } else if (confirmSpecialCharacter === criteria.specialCharacters) {  
+  } else if ('criteria.specialCharacters') {  
     for (i = 1; i <= passwordLength; i++) {
     index = Math.floor(Math.random() * criteria.specialCharacters.length);
     character = criteria.specialCharacters[index];
     console.log(character);
     }
     // uppercase ---------------------------------------
-  } else if (confirmUppercase === criteria.confirmUppercase) {  
+  } else if ('criteria.confirmUppercase') {  
     for (i = 1; i <= passwordLength; i++) {
     index = Math.floor(Math.random() * criteria.confirmUppercase.length);
     character = criteria.confirmUppercase[index];
     console.log(character);
     }
     // lowercase -------------------------------
-  } else if (confirmLowercase === criteria.confirmLowercase) {  
+  } else if ('criteria.confirmLowercase') {  
     for (i = 1; i <= passwordLength; i++) {
     index = Math.floor(Math.random() * criteria.confirmLowercase.length);
     character = criteria.confirmLowercase[index];
     console.log(character);
     }
+    console.log("password: ", password)
   } return password; 
 }
 
@@ -68,10 +70,9 @@ function generatePassword(){
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  console.log("password in writePassword: ", password);
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);  
+generateBtn.addEventListener("click", writePassword);
