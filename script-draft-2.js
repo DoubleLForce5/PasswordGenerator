@@ -8,12 +8,15 @@ var criteria = {
   upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
   numbers: [0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9],
   specialCharacters: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
-}
+};
 
-var confirmNumber;
-var confirmSpecialCharacter;
-var confirmUppercase;
-var confirmLowercase;
+var characterPool = [];
+var password = '';
+
+// var confirmNumber;
+// var confirmSpecialCharacter;
+// var confirmUppercase;
+// var confirmLowercase;
 
 function generatePassword() {
   // do stuff to generate a password
@@ -31,36 +34,35 @@ function generatePassword() {
   // if even one confirmation is not confirmed the alert will be returned to the user 
   if (!confirmNumber || !confirmSpecialCharacter || !confirmUppercase || !confirmLowercase) {
     alert ('Invalid please try again');
-    console.log(alert);
+
     // numbers --------------
     // confirmNumber will never === criteria.numbers because they are different data types 
-  } else if ('criteria.numbers') { 
+  } else if (confirmNumber) { 
     // How values are chosen 
     for (i = 1; i <= passwordLength; i++) {
-    index = Math.floor(Math.random() * criteria.numbers.length);
-    character = criteria.numbers[index];
-    console.log(character);
+    index = Math.floor(Math.random() * characterPool.push(criteria[2]));
+    console.log(characterPool);
     }
     // special characters ------------------
-  } else if ('criteria.specialCharacters') {  
+  } else if (confirmSpecialCharacter) {  
     for (i = 1; i <= passwordLength; i++) {
-    index = Math.floor(Math.random() * criteria.specialCharacters.length);
-    character = criteria.specialCharacters[index];
-    console.log(character);
+    index = Math.floor(Math.random() * characterPool.push(criteria.specialCharacters));
+    // character = characterPool.specialCharacters[index];
+    console.log(characterPool);
     }
     // uppercase ---------------------------------------
-  } else if ('criteria.confirmUppercase') {  
+  } else if (confirmUppercase) {  
     for (i = 1; i <= passwordLength; i++) {
-    index = Math.floor(Math.random() * criteria.confirmUppercase.length);
-    character = criteria.confirmUppercase[index];
-    console.log(character);
+    index = Math.floor(Math.random() * characterPool.push(criteria.uppercase));
+    // character = characterPool.uppercase[index];
+    console.log(characterPool);
     }
     // lowercase -------------------------------
-  } else if ('criteria.confirmLowercase') {  
+  } else if (confirmLowercase) {  
     for (i = 1; i <= passwordLength; i++) {
-    index = Math.floor(Math.random() * criteria.confirmLowercase.length);
-    character = criteria.confirmLowercase[index];
-    console.log(character);
+    index = Math.floor(Math.random() * characterPool.push(criteria.lowercase));
+    // character = characterPool.lowercase[index];
+    console.log(characterPool);
     }
     console.log("password: ", password)
   } return password; 
