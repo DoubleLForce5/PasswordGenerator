@@ -33,18 +33,37 @@ function generatePassword() {
   if (!confirmNumber || !confirmSpecialCharacter || !confirmUppercase || !confirmLowercase) {
     alert ('Invalid please try again');
     // or
-  } else if (confirmNumber && confirmSpecialCharacter && confirmUppercase && confirmLowercase); 
-  console.log(confirmNumber);
-  console.log(confirmSpecialCharacter);
-  console.log(confirmUppercase);
-  console.log(confirmLowercase); 
+  } else if 
+  // (confirmNumber && confirmSpecialCharacter && confirmUppercase && confirmLowercase); 
+    (confirmNumber) { 
+    characterPool.concat(criteria[2]);
+    console.log(confirmNumber);
+    }
+    // special characters ------------------
+    if (confirmSpecialCharacter) {
+    characterPool.concat(criteria[3]);
+    console.log(confirmSpecialCharacter);
+    }
+    // uppercase ---------------------------------------
+    if (confirmUppercase) {
+    characterPool.concat(criteria[1]);
+    console.log(confirmUppercase);
+    }
+    // lowercase -------------------------------
+    if (confirmLowercase) {
+    characterPool.concat(criteria[0]);
+    console.log(confirmLowercase);
+    }
+  // console.log(confirmNumber);
+  // console.log(confirmSpecialCharacter);
+  // console.log(confirmUppercase);
+  // console.log(confirmLowercase); 
   {
   for (i = 1; i <= passwordLength; i++) {
-  index = Math.floor(Math.random() * characterPool.push(criteria));
+  var index = Math.floor(Math.random() * characterPool.push());
   console.log(index)
   }
   }
-
   console.log("password: ", password)
   return password; 
 }
