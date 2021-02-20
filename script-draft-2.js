@@ -3,18 +3,18 @@ var generateBtn = document.querySelector("#generate");
 
 // various characters that will be used to create password | Computer needs to calculate its input choice | criteria = object, lowercase/uppercase/numbers/specialcharacters = names and their contents = values 
 
-var criteria = {
-  lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-  upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-  numbers: [0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9],
-  specialCharacters: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
-};
+  var criteria = {
+    lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+    upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+    numbers: [0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9],
+    specialCharacters: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"]
+  }
 
 var minLength = 8;
 var maxLength = 128;
 // empty array and string to hold generated items 
 var characterPool = [];
-var password = '';
+var password = [];
 
 // conditionals, adding to the character pool
 function generatePassword() {
@@ -36,33 +36,46 @@ function generatePassword() {
   } else if 
   // (confirmNumber && confirmSpecialCharacter && confirmUppercase && confirmLowercase); 
     (confirmNumber) { 
-    characterPool.concat(criteria[2]);
+    characterPool = characterPool.concat(criteria.numbers);
     console.log(confirmNumber);
     }
     // special characters ------------------
     if (confirmSpecialCharacter) {
-    characterPool.concat(criteria[3]);
+    characterPool = characterPool.concat(criteria.specialCharacters);
     console.log(confirmSpecialCharacter);
     }
     // uppercase ---------------------------------------
     if (confirmUppercase) {
-    characterPool.concat(criteria[1]);
+    characterPool = characterPool.concat(criteria.upperCase);
     console.log(confirmUppercase);
     }
     // lowercase -------------------------------
     if (confirmLowercase) {
-    characterPool.concat(criteria[0]);
+    characterPool = characterPool.concat(criteria.lowerCase);
     console.log(confirmLowercase);
     }
   // console.log(confirmNumber);
   // console.log(confirmSpecialCharacter);
   // console.log(confirmUppercase);
   // console.log(confirmLowercase); 
-  {
-  for (i = 1; i <= passwordLength; i++) {
-  var index = Math.floor(Math.random() * characterPool.push());
-  console.log(index)
-  }
+  
+  for (i = 0; i < passwordLength; i++) {
+  var index = Math.floor(Math.random() * characterPool.length);
+  console.log(index);
+  console.log(characterPool[index]);
+  password.push(characterPool[index]);
+  console.log(password.join(""));
+  password.join("");
+  // console.log(obj[numbers], obj[specialCharacters], Obj[upperCase], obj[lowerCase]);
+  
+
+
+
+
+  // console.log('criteriaTypes', criteriaTypes);
+  // Object.keys(criteria);
+  // console.log(object.keys(criteria));
+  
   }
   console.log("password: ", password)
   return password; 
