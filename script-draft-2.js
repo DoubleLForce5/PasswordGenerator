@@ -64,22 +64,26 @@ function generatePassword() {
   console.log(index);
   console.log(characterPool[index]);
   password.push(characterPool[index]);
-  console.log(password.join(""));
-  password.join("");
-  // console.log(obj[numbers], obj[specialCharacters], Obj[upperCase], obj[lowerCase]);
+}
   
-
+  // console.log(obj[numbers], obj[specialCharacters], Obj[upperCase], obj[lowerCase]);
+  // Object.keys(characterPool).forEach(function (key) {
+  // console.log(characterPool[key]); }
+  // tempPs.forEach(password, index)
 
 
 
   // console.log('criteriaTypes', criteriaTypes);
   // Object.keys(criteria);
   // console.log(object.keys(criteria));
-  
-  }
   console.log("password: ", password)
   return password; 
 }
+
+var joinedPassword = password.join(",");
+console.log(password.join(","));
+
+ 
 
   // (confirmNumber) { 
   //   console.log(confirmNumber);
