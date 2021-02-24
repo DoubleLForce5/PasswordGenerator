@@ -57,8 +57,8 @@ function generatePassword() {
     // for loop is used to set how many times the computer will loop through the values based on the password length 
     for (i = 0; i < passwordLength; i++) {
     var index = Math.floor(Math.random() * characterPool.length);
-    console.log(index);
-    console.log(characterPool[index]);
+    // console.log(index);
+    // console.log(characterPool[index]);
     password.push(characterPool[index]);
   }
 
