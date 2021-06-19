@@ -1,9 +1,10 @@
-# PasswordGenerator
+# Password Generator
 
-## Description: 
+## Description
 
 Modified starter code to create an application that enables employees to generate a random password based on the criteria they select.
 
+## Usage instructions
 Upon clicking the link to the deployed page the user is presented with a series of prompts. 
 
 ![starting point](assets/startingPoint.png)
@@ -41,13 +42,7 @@ If the user inputs an appropriate password length and accepts all the required c
 
 ![password](assets/password.png)
 
-## Process: 
 
-I began this project by writing out pseudo-code to provide a general outline for solving the issue.  
-Then I started adding code to the page to see what worked and what didn't. 
-
-After many hours of trial and error on top of a mountain of Google searches and questions for tutors, I was able to find a solution and create a password generator. 
-
-## Link to deployed application:
+## Link to deployed application
 
 https://doublelforce5.github.io/PasswordGenerator/
