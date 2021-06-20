@@ -15,45 +15,46 @@ var password = [];
 
 function generatePassword() {
 
+  password = [];
+  characterPool = [];
+
   passwordLength = prompt('How many characters would you like in your password? Please enter a number between 8 and 128!');
   if (passwordLength < minLength || passwordLength > maxLength) {
     alert('Invalid please try again');
     // console.log(passwordLength);
   } else {
 
-  confirmNumber = confirm('Click OK to confirm including numbers in your password.');
-  if (confirmNumber) {
-    characterPool = characterPool.concat(criteria.numbers);
-    // console.log(confirmNumber);
-  };
+    confirmNumber = confirm('Click OK to confirm including numbers in your password.');
+    if (confirmNumber) {
+      characterPool = characterPool.concat(criteria.numbers);
+      // console.log(confirmNumber);
+    };
 
-  confirmSpecialCharacter = confirm('Click OK to confirm including special characters in your password.')
-  if (confirmSpecialCharacter ) {
-    characterPool = characterPool.concat(criteria.specialCharacters);
-  };
+    confirmSpecialCharacter = confirm('Click OK to confirm including special characters in your password.')
+    if (confirmSpecialCharacter) {
+      characterPool = characterPool.concat(criteria.specialCharacters);
+    };
 
-  confirmUppercase = confirm('Click OK to confirm including uppercase letters in your password.')
-  if (confirmUppercase) {
-    characterPool = characterPool.concat(criteria.upperCase);
-  };
+    confirmUppercase = confirm('Click OK to confirm including uppercase letters in your password.')
+    if (confirmUppercase) {
+      characterPool = characterPool.concat(criteria.upperCase);
+    };
 
-  confirmLowercase = confirm('Click OK to confirm including lowercase letters in your password.')
-  if (confirmLowercase) {
-    characterPool = characterPool.concat(criteria.lowerCase);
-    console.log(confirmLowercase);
-  };
+    confirmLowercase = confirm('Click OK to confirm including lowercase letters in your password.')
+    if (confirmLowercase) {
+      characterPool = characterPool.concat(criteria.lowerCase);
+      console.log(confirmLowercase);
+    };
 
-  for (i = 0; i < passwordLength; i++) {
-    var index = Math.floor(Math.random() * characterPool.length);
-    password.push(characterPool[index]);
-  };
+    for (i = 0; i < passwordLength; i++) {
+      var index = Math.floor(Math.random() * characterPool.length);
+      password.push(characterPool[index]);
+    };
 
-};
+  };
 
   console.log("password: ", password)
   return password.join('');
-
-  
 };
 
 // Write password to the #password input
