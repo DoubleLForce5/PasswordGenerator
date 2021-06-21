@@ -25,7 +25,8 @@ Once an appropriate password length has been selected the user will receive a se
 <img width="443" alt="Screen Shot 2021-06-21 at 8 43 42 AM" src="https://user-images.githubusercontent.com/73543476/122772282-d6fae580-d26c-11eb-9ed6-8e24e0ace8d8.png">
 
 Following the prompts, a password will be generated based on the user's criteria. 
-They can then decide to keep the generated password or generate a new one. 
+The user can then decide to keep the password or generate a new one based on different criteria. 
+
 <img width="718" alt="Screen Shot 2021-06-21 at 8 47 46 AM" src="https://user-images.githubusercontent.com/73543476/122772821-5f798600-d26d-11eb-9eba-f96c2106e161.png">
 
 ## Deployed site
